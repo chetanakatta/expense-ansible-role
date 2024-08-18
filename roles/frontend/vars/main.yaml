@@ -1,4 +1,0 @@
-BACKEND_API_URL: backend.expense.fun
-app_location: /app
-component: frontend
-app_location: /usr/share/nginx/html
