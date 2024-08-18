@@ -20,16 +20,16 @@
   - name: check db connection  #1st time it will give error
     community.mysql.mysql_info:
        login_user: root
-       login_password: "{{ mysql_root_password }}"
-       login_host: "{{ login_host }}" 
+       login_password: "{{mysql_root_password}}"
+       login_host: "{{login_host}}" 
        filter: version
     ignore_errors: yes
     register: mysql_connection_output # register is used to store the variable (connection) info
   
   - name: print output
     ansible.builtin.debug:
-     msg: "output: {{ mysql_connection_output }} "     
+     msg: "output: {{mysql_connection_output}} "     
 
   - name: setup root password
-    ansible.builtin.command: "mysql_secure_installation --set-root-pass {{ mysql_root_password }}" 
+    ansible.builtin.command: "mysql_secure_installation --set-root-pass {{mysql_root_password}}" 
     when: mysql_connection_output.failes is true # don't need to give {{}} in when condition    
