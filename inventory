@@ -1,0 +1,8 @@
+[db]
+db.expense.fun
+
+[backend]
+backend.expense.fun
+
+[frontend]
+expense.fun
